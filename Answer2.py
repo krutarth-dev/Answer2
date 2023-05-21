@@ -1,10 +1,10 @@
 def is_valid_string(s):
-    # Count the frequency of each character
+    # Counting the frequency of each character
     frequency = {}
     for char in s:
         frequency[char] = frequency.get(char, 0) + 1
 
-    # Count the frequencies of the frequencies
+    # Counting the frequencies of the frequencies
     freq_count = {}
     for freq in frequency.values():
         freq_count[freq] = freq_count.get(freq, 0) + 1
@@ -21,17 +21,20 @@ def is_valid_string(s):
 
     return "NO"
 
-# Test the program
+# Testing
 s = "abc"
 print(is_valid_string(s))
+#Explanation
 # Output: YES (All characters appear the same number of times: {'a': 1, 'b': 1, 'c': 1})
 
 # Additional Test Case 1
 s = "abcc"
 print(is_valid_string(s))
+#Explanation
 # Output: NO (Removing one occurrence of 'c' would leave different frequencies: {'a': 1, 'b': 1, 'c': 2})
 
 # Additional Test Case 2
 s = "aabbccdd"
 print(is_valid_string(s))
+#Explanation
 # Output: YES (All characters appear the same number of times: {'a': 2, 'b': 2, 'c': 2, 'd': 2})
